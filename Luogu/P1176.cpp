@@ -16,8 +16,8 @@ namespace programNamespace {
 			for (int j = 1; j <= n; j++) {
 				if (fix[i][j] || (i == j && i == 1))
 					continue;
-				f[i][j] = a[i - 1][j] + a[i][j - 1];
-				a[i][j] %= 100003;
+				f[i][j] = f[i - 1][j] + f[i][j - 1];
+				f[i][j] %= 100003;
 			}
 
 		printf("%d\n", f[n][n] % 100003);
